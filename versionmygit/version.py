@@ -33,7 +33,7 @@ class GitVersion:
             raise FileNotFoundError(f"Der angegebene Pfad '{path}' existiert nicht.")
         
         
-        self.minor_commit = kwargs.get('minor_commit', self._get_first_commit())
+        self.minor_commit = kwargs.get('minor_commit', self._get_first_commit()) or self._get_first_commit()
         self.major = kwargs.get('major', 0)
         self.minor = kwargs.get('minor', 0)
         
